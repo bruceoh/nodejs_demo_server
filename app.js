@@ -1,12 +1,14 @@
 var http = require("http");
 var express = require("express");
 var app = express();
-var port = 3001;
-var v1 = require("./routes/v1");
+var port = process.env.PORT || 3000;
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/v1", v1);
+
+
+app.use(require('./routes'));
 
 app.get("/", function(req, res) {
   res.send("Hello World");
