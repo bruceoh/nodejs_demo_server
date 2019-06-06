@@ -16,6 +16,15 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.post("/signup", (req, res, next) => {
+    const email = req.body.email;
+    const password = req.body.password;
+
+    res.send('signup : ' + email + ' ' + password);
+});
+
+
+/*
 router.get('/:productId', (req, res, next) => {
     const id = req.params.productId;
     if (id === 'special') {
@@ -54,7 +63,7 @@ router.post('/users', function(req, res, next){
     }).catch(next);
   });
 
-  
+  */
   
 
 module.exports = router;
